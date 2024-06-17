@@ -1,5 +1,9 @@
 const Recommendation = ({ bike }) => {
 
+  const redirectToProduct = (url) => {
+    window.parent.location.href = url;
+  }
+
 
   if (!bike) {
     return <p>No bike</p>
@@ -13,7 +17,7 @@ const Recommendation = ({ bike }) => {
       <div className="content">
         <h3>{bike.bikeName}</h3>
         <p>{bike.description}</p>
-        <a className="readMoreButton" href={bike.link}>Les mer og kjøp</a>
+        <button onClick={redirectToProduct(bike.link)} className="readMoreButton" href={bike.link}>Les mer og kjøp</button>
       </div>
     </div>
   )

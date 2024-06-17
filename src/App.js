@@ -29,22 +29,22 @@ const App = () => {
   return (
     <div className='main'>
       {currentQuestion ? (   
-        <>
-        <h1>Elsykkelvelgeren</h1>
-        <h2>Svar på spørsmålene under, så finner vi den perfekte sykkelen for deg!</h2>
-        <ProgressBar />
-        <div className='navigationButtons'>
-          <button onClick={previousQuestion}>Forrige spørsmål</button>
-          <button onClick={resetApp}>Start på nytt</button>
+        <div className='header'>
+          <h1>Elsykkelvelgeren</h1>
+          <h2>Svar på spørsmålene under, så finner vi den perfekte sykkelen for deg!</h2>
+          <ProgressBar />
+          <div className='navigationButtons'>
+            <button onClick={previousQuestion}>Forrige spørsmål</button>
+            <button onClick={resetApp}>Start på nytt</button>
+          </div>
+        </div> ) : 
+        <div className='header'>
+          <h1>Vi tror du kommer til å digg denne!</h1>
+          <h2>Basert på dine svar, mener vi denne sykkelen kan være et godt alternativ for deg</h2>
+          <div className='navigationButtons'>
+            <button onClick={resetApp}>Start på nytt</button>
+          </div>
         </div>
-        </> ) : 
-        <>
-        <h1>Vi tror du kommer til å digg denne!</h1>
-        <h2>Basert på dine svar, mener vi denne sykkelen kan være et godt alternativ for deg</h2>
-        <div className='navigationButtons'>
-          <button onClick={resetApp}>Start på nytt</button>
-        </div>
-        </>
       }
       <div className='outputContainer'>
       {currentQuestion ?       
