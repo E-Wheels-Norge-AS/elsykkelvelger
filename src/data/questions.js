@@ -1,75 +1,187 @@
 export const questions = [
-    {
-        id: 1,
+   { 
         question: "Hvor skal du sykle?",
-        stepsLeft: 3,
         options: [
-            { 
-                text: "Asfalt", 
-                next: 2, 
-                image: "/optionsImages/asfalt.webp",
-                description: "Du sykler for det meste i byen" 
+            {
+                title: "Asfalt",
+                description: "Du sykler for det meste i byen",
+                question: "Hva skal sykkelen brukes til?",
+                image: "./optionsImages/asfalt.webp",
+                options: [
+                    {
+                        title: "Pendling til jobb",
+                        question: "Hvor langt er det til jobben",
+                        description: "Du sykler ofte til jobben",
+                        image: "./optionsImages/pendling.webp",
+                        options: [
+                            {
+                                title: "Langt",
+                                question: "Hvilken sittestilling foretrekker du?",
+                                description: "",
+                                image: "",
+                                options: [
+                                    {
+                                        title: "Oppreist",
+                                        question: "Hvilken type sykkel ønsker du?",
+                                        description: "",
+                                        image: "",
+                                        options: [
+                                            {
+                                                title: "Damesykkel",
+                                                question: "",
+                                                description: "",
+                                                image: "",
+                                                options: [
+                                
+                                                ]
+                                            },
+                                            {
+                                                title: "Unisex",
+                                                question: "",
+                                                description: "",
+                                                image: "",
+                                                options: [
+                                
+                                                ]
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        title: "Aktiv",
+                                        question: "",
+                                        description: "",
+                                        image: "",
+                                        options: [
+                        
+                                        ]
+                                    },
+                                ]
+                            },
+                            {
+                                title: "Kort",
+                                question: "Hvilken sittestilling foretrekker du?",
+                                description: "",
+                                image: "",
+                                options: [
+                                    {
+                                        title: "Oppreist",
+                                        question: "Hvilken type sykkel ønsker du?",
+                                        description: "",
+                                        image: "",
+                                        options: [
+                                            {
+                                                title: "Damesykkel",
+                                                question: "",
+                                                description: "",
+                                                image: "",
+                                                options: [
+                                
+                                                ]
+                                            },
+                                            {
+                                                title: "Unisex",
+                                                question: "",
+                                                description: "",
+                                                image: "",
+                                                options: [
+                                
+                                                ]
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        title: "Aktiv",
+                                        question: "Hvilken type sykkel ønsker du?",
+                                        description: "",
+                                        image: "",
+                                        options: [
+                                            {
+                                                title: "Damesykkel",
+                                                question: "",
+                                                description: "",
+                                                image: "",
+                                                options: [
+                                
+                                                ]
+                                            },
+                                            {
+                                                title: "Unisex",
+                                                question: "",
+                                                description: "",
+                                                image: "",
+                                                options: [
+                                
+                                                ]
+                                            },
+                                        ]
+                                    },
+                                ]
+                            },
+                        ]
+                    },
+                    {
+                        title: "Frakt og last",
+                        question: "",
+                        description: "",
+                        image: "",
+                        slug: "fosna-hvitserk"
+                    },
+                    {
+                        title: "Fritid og trening",
+                        question: "Hvilken sittestilling ømsker du?",
+                        description: "",
+                        image: "",
+                        options: [
+                            {
+                                title: "Oppreist",
+                                question: "Hvilken type sykkel ønsker du?",
+                                description: "",
+                                image: "",
+                                options: [
+                                    {
+                                        title: "Damesykkel",
+                                        question: "",
+                                        description: "",
+                                        image: "",
+                                        options: [
+                        
+                                        ]
+                                    },
+                                    {
+                                        title: "Unisex",
+                                        question: "",
+                                        description: "",
+                                        image: "",
+                                        options: [
+                        
+                                        ]
+                                    },
+                                ]
+                            },
+                            {
+                                title: "Aktiv",
+                                question: "",
+                                description: "",
+                                image: "",
+                                options: [
+                
+                                ]
+                            },
+                        ]
+                    },
+
+                ]
             },
-            { 
-                text: "Terreng", 
-                next: 4, 
-                image: "/optionsImages/terreng.webp",
-                description: "Stisykling, downhill og fjellturer" 
+            {
+                title: "Terreng",
+                description: "Stisykling, fjellturer og downhill",
+                question: "",
+                image: "./optionsImages/terreng.webp",
+                options: [
+
+                ]
             },
-        ] 
-    },
-    {
-        id: 2,
-        question: "Hva skal du bruke sykkelen til?",
-        options: [
-            { 
-                text: "Pendling", 
-                next: 3,
-                image: "/optionsImages/pendling.webp",
-                description: "Du bruker sykkelen daglig for å pendle til jobben" 
-            },
-            { 
-                text: "Frakt og last", 
-                selectedBikeId: 2,
-                image: "/optionsImages/lastesykkel.jpg",
-                description: "For deg som handler på vei hjem fra jobb, og henter i barnehagen" 
-            },
-        ] 
-    },
-    {
-        id: 3,
-        question: "Hvor langt er det til jobben?",
-        options: [
-            { 
-                text: "Kort", 
-                selectedBikeId: 1,
-                image: "/optionsImages/pendling.webp",
-                description: "Du bruker sykkelen daglig for å pendle til jobben" 
-            },
-            { 
-                text: "Langt", 
-                selectedBikeId: 1,
-                image: "/optionsImages/lastesykkel.jpg",
-                description: "For deg som handler på vei hjem fra jobb, og henter i barnehagen" 
-            },
-        ] 
-    },
-    {
-        id: 4,
-        question: "Hvilken demping ønsker du?",
-        options: [
-            { 
-                text: "Fulldempet", 
-                selectedBikeId: 3,
-                image: "/optionsImages/fulldemper.webp",
-                description: "Stisykling, downhill og fjellturer"  
-            },
-            { 
-                text: "Ikke fulldempet", 
-                selectedBikeId: 1,
-                image: "/optionsImages/terreng.webp",
-                description: "Stisykling, downhill og fjellturer"  
-            },
-        ] 
+
+        ]
     }
 ]

@@ -1,69 +1,70 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
-import Question from './components/Question'
-import Recommendation from './components/Recommendation'
-import { questions } from './data/questions'
-import "./global.scss"
-import ProgressBar from './components/ProgressBar'
+// src/App.js
+import React, { useEffect, useState } from 'react';
+import { questions } from './data/questions';
+import Recommendation from './components/Recommendation';
+import Question from './components/Question';
+import { reset } from './functions/reset';
+import { previousQuestion } from './functions/previousQuestion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeftLong, faRotateLeft } from '@fortawesome/free-solid-svg-icons'
+import "./App.scss"
 
 const App = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(null);
-  const [totalQuestions, setTotalQuestions] = useState(10)
-  const [bike, setBike] = useState(null);
-  
-  useEffect(()=>{
-    const question = questions.find(q => q.id === 1)
-    setCurrentQuestion(question)
-  }, [])
+  const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
+  const [history, setHistory] = useState([]);
+  const [slug, setSlug] = useState("")
+  const [isRecommendation, setIsRecommendation] = useState(false);
+  const [progress, setProgress] = useState(0);
 
-  const resetApp = () => {
-    const question = questions.find(q => q.id === 1)
-    setCurrentQuestion(question)
-    setBike(null)
+  useEffect(() => {
+    const totalQuestions = countTotalQuestions(questions[0]);
+    if (isRecommendation) {
+      setProgress(100);
+    } else {
+      const remainingQuestions = countRemainingQuestions(currentQuestion);
+      const completedQuestions = totalQuestions - remainingQuestions;
+      setProgress((completedQuestions / totalQuestions) * 100);
+    }
+  }, [currentQuestion, history, isRecommendation]);
+
+  const countTotalQuestions = (question) => {
+    if (!question.options || question.options.length === 0) return 1;
+    return 1 + question.options.reduce((sum, option) => sum + countTotalQuestions(option), 0);
+  };
+
+  const countRemainingQuestions = (question) => {
+    if (!question.options || question.options.length === 0) return 0;
+    return question.options.reduce((sum, option) => sum + countTotalQuestions(option), 0);
+  };
+
+  const questionProps = {
+    currentQuestion,
+    setCurrentQuestion,
+    setSlug,
+    history,
+    setHistory,
+    setIsRecommendation,
+    progress,
+    questions
   }
 
-  const previousQuestion = () => {
-    console.log(currentQuestion);
-  }
-
-  return (
-    <div className='main'>
-      {currentQuestion ? (   
-        <div className='header'>
-          <h1>Elsykkelvelgeren</h1>
-          <h2>Svar på spørsmålene under, så finner vi den perfekte sykkelen for deg!</h2>
-          <ProgressBar />
-          <div className='navigationButtons'>
-            <button onClick={previousQuestion}>Forrige spørsmål</button>
-            <button onClick={resetApp}>Start på nytt</button>
-          </div>
-        </div> ) : 
-        <div className='header'>
-          <h1>Vi tror du kommer til å digg denne!</h1>
-          <h2>Basert på dine svar, mener vi denne sykkelen kan være et godt alternativ for deg</h2>
-          <div className='navigationButtons'>
-            <button onClick={resetApp}>Start på nytt</button>
-          </div>
-        </div>
-      }
-      <div className='outputContainer'>
-      {currentQuestion ?       
-        <Question
-        currentQuestion={currentQuestion}
-        setCurrentQuestion={setCurrentQuestion}  
-        setBike={setBike}
-        /> 
-        : 
-        <>
-          <Recommendation 
-            bike={bike}
-          />
-        </>
-      }
-      </div>
-    </div>
-  )
+  const navigationProps = {
+    history, 
+    setHistory, 
+    setCurrentQuestion, 
+    questions, 
+    setIsRecommendation,
+    isRecommendation
 }
 
-export default App
+  return (
+    <div className='app'>
+      {!isRecommendation ? 
+        <Question {...questionProps} navigationProps={navigationProps} /> : 
+        <Recommendation slug={slug}  navigationProps={navigationProps}/>
+      }
+    </div>
+  );
+};
 
+export default App;

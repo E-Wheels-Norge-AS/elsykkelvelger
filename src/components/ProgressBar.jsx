@@ -1,11 +1,8 @@
-import React, { useState } from 'react'
-
-const ProgressBar = () => {
-    const [progressWidth, setProgressWidth] = useState(10) 
-
+const ProgressBar = ({ progress }) => {
+    
     return (
-        <div className='progressBar'>
-            <div className='progress' style={{width: progressWidth + "%"}}></div>
+        <div className='progressbar'>
+            <div className='progressbar_progress' style={{width: `${progress}%`}}></div>
         </div>
     )
 }
