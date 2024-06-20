@@ -27,18 +27,18 @@ export const questions = [
                                         image: "",
                                         options: [
                                             {
-                                                title: "Damesykkel",
+                                                title: "Lavt innsteg",
                                                 question: "",
-                                                description: "",
+                                                description: "Lettere å stige av og på sykkelen",
                                                 image: "",
                                                 options: [
                                 
                                                 ]
                                             },
                                             {
-                                                title: "Unisex",
+                                                title: "Høyt innsteg",
                                                 question: "",
-                                                description: "",
+                                                description: "Stivere og sterkere rammer som gir ",
                                                 image: "",
                                                 options: [
                                 
@@ -128,7 +128,7 @@ export const questions = [
                     },
                     {
                         title: "Fritid og trening",
-                        question: "Hvilken sittestilling ømsker du?",
+                        question: "Hvilken sittestilling foretrekker du?",
                         description: "",
                         image: "",
                         options: [
@@ -177,6 +177,15 @@ export const questions = [
                 description: "Stisykling, fjellturer og downhill",
                 question: "",
                 image: "./optionsImages/terreng.webp",
+                options: [
+
+                ]
+            },
+            {
+                title: "Blandet",
+                description: "Lett terrengsykling og sykling i byen",
+                question: "",
+                image: "./optionsImages/blanding.webp",
                 options: [
 
                 ]

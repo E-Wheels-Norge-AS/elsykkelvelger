@@ -21,6 +21,7 @@ body {
 .app {
     max-width: 950px;
     margin: auto;
+    padding: 0 1rem;
 }
 
 .navigation {
@@ -28,7 +29,6 @@ body {
     justify-content: space-between;
     gap: 1rem;
     width: 100%;
-    margin-bottom: 2rem;
 
     button {
         background-color: transparent;
@@ -95,7 +95,8 @@ body {
         }
 
         .options {
-            display: flex;
+            display: grid;
+            grid-template-columns: auto auto auto;
             gap: 1rem;
             margin: 2.5rem 0;
             list-style: none;
@@ -123,6 +124,7 @@ body {
                     object-fit: cover;
                     transition: all .3s;
                 }
+
                 &:hover img {
                     transform: scale(110%);
                 }
@@ -131,34 +133,51 @@ body {
     }
 
     .recommendation-container {
-        display: grid;
-        grid-template-columns: 50% auto;
-        justify-content: center;
-        background-color: white;
         margin-top: 2rem;
 
-        img {
-            width: 100%;
-        }
-
-        .recommendation_content {
-            display: flex;
-            flex-direction: column;
+        .recommendation_inner {
+            display: grid;
+            grid-template-columns: 50% auto;
             justify-content: center;
-            gap: 1rem;
-
-            h3 {
-                font-size: 1.5rem;
+            background-color: white;
+            margin-top: 1rem;
+    
+            img {
+                width: 100%;
             }
+    
+            .recommendation_content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 1rem;
+                padding: 0 1rem;
+    
+                h3 {
+                    font-size: 1.5rem;
+                }
 
-            button {
-                padding: 0.5rem 1rem;
-                display: block;
-                border: none;
-                background-color: $mainColor;
-                font-size: 1rem;
+                p {
+                    font-size: 1.1rem;
+                    color: rgb(73, 73, 73);
+                }
+    
+                button {
+                    padding: 0.5rem 1rem;
+                    display: block;
+                    border: none;
+                    background-color: $mainColor;
+                    font-size: 1rem;
+                }
             }
         }
     }
 
+
+}
+
+@media screen and (max-width: 550px) {
+    .main-container .question-container .options {
+        grid-template-columns: auto auto ;
+    }
 }

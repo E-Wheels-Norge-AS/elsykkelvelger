@@ -33,7 +33,6 @@ const Recommendation = ({ slug, navigationProps }) => {
     return (
       <Loader />
     )
-  
   }
 
   return (
@@ -42,16 +41,18 @@ const Recommendation = ({ slug, navigationProps }) => {
         <h1>Vi tror du kommer til å digge denne</h1>
         <h2>Basert på dine svar tror vi denne sykkelen kommer til å passe deg perfekt</h2>
       </div>
-      <Navigation {...navigationProps} />
       <div className="recommendation-container">
-        <div className="recommendation_image">
-          <img src={bike.image} />
-        </div>
-        <div className="recommendation_content">
-          <h3>{bike.title}</h3>
-          <p>{bike.description}</p>
-          <div>
-            <button onClick={() => redirectToProduct(bike.ew_url)}>Les mer og kjøp</button>
+        <Navigation {...navigationProps} />
+        <div className="recommendation_inner">
+          <div className="recommendation_image">
+            <img src={bike.image} />
+          </div>
+          <div className="recommendation_content">
+            <h3>{bike.title}</h3>
+            <p>{bike.description}</p>
+            <div>
+              <button onClick={() => redirectToProduct(bike.ew_url)}>Les mer og kjøp</button>
+            </div>
           </div>
         </div>
       </div>
