@@ -37,6 +37,7 @@ const App = () => {
     return question.options.reduce((sum, option) => sum + countTotalQuestions(option), 0);
   };
 
+
   const questionProps = {
     currentQuestion,
     setCurrentQuestion,
