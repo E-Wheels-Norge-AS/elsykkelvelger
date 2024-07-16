@@ -33,7 +33,8 @@ const App = () => {
     return question.options.reduce((sum, option) => sum + countTotalQuestions(option), 0);
   };
 
-  const props = {
+
+  const questionProps = {
     currentQuestion,
     setCurrentQuestion,
     setSlug,
@@ -44,11 +45,20 @@ const App = () => {
     questions
   }
 
+  const navigationProps = {
+    history, 
+    setHistory, 
+    setCurrentQuestion, 
+    questions, 
+    setIsRecommendation,
+    isRecommendation
+  }
+
   return (
     <div className='app'>
       {isRecommendation ? 
-        <Recommendation slug={slug}  navigationProps={props}/> :
-        <Question {...props} navigationProps={props} />  
+        <Recommendation slug={slug}  navigationProps={navigationProps}/> :
+        <Question {...questionProps} navigationProps={navigationProps} />  
       }
     </div>
   );
