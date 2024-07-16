@@ -3,10 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { questions } from './data/questions';
 import Recommendation from './components/Recommendation';
 import Question from './components/Question';
-import { reset } from './functions/reset';
-import { previousQuestion } from './functions/previousQuestion';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeftLong, faRotateLeft } from '@fortawesome/free-solid-svg-icons'
 import "./App.scss"
 
 const App = () => {
@@ -37,8 +33,7 @@ const App = () => {
     return question.options.reduce((sum, option) => sum + countTotalQuestions(option), 0);
   };
 
-
-  const questionProps = {
+  const props = {
     currentQuestion,
     setCurrentQuestion,
     setSlug,
@@ -49,20 +44,11 @@ const App = () => {
     questions
   }
 
-  const navigationProps = {
-    history, 
-    setHistory, 
-    setCurrentQuestion, 
-    questions, 
-    setIsRecommendation,
-    isRecommendation
-}
-
   return (
     <div className='app'>
-      {!isRecommendation ? 
-        <Question {...questionProps} navigationProps={navigationProps} /> : 
-        <Recommendation slug={slug}  navigationProps={navigationProps}/>
+      {isRecommendation ? 
+        <Recommendation slug={slug}  navigationProps={props}/> :
+        <Question {...props} navigationProps={props} />  
       }
     </div>
   );

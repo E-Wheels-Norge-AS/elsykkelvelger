@@ -28,11 +28,13 @@ const Question = ({navigationProps, currentQuestion, setCurrentQuestion, history
                 <ul className="options">
                     {currentQuestion.options.map((bike, index) => (
                         <li key={index} onClick={() => handleOptionClick(bike)}>
-                            <h4>{bike.title}</h4>
                             <div className="image_container">
                                 <img src={bike.image ? bike.image : "./optionsImages/asfalt.webp"} alt={bike.title}/>
                             </div>
-                            <p>{bike.description}</p>
+                            <div className="text_container">
+                                <h4>{bike.title}</h4>
+                                <p>{bike.description}</p>
+                            </div>
                         </li>
                     ))}
                 </ul>
