@@ -1,9 +1,9 @@
+$backgroundColor: #f6f6f6;;
 $mainColor: #75cdd8;
-$progressBarColor: #d9eef1;
 $secondaryColor: #131f25;
 $lighColor: #f6f6f6;
 $darkColor: #000000;
-$backgroundColor: #f6f6f6;;
+$progressBarColor: #d9eef1;
 
 $mainFont: Roboto, 'Open Sans', sans-serif;
 
@@ -169,24 +169,28 @@ body {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                gap: 1rem;
+                gap: 1.5rem;
                 padding: 0 1rem;
     
                 h3 {
-                    font-size: 1.5rem;
+                    font-size: 2rem;
+                    font-weight: 500;
                 }
 
                 p {
-                    font-size: 1.1rem;
+                    font-size: 1rem;
+                    line-height: 1.5rem;
                     color: rgb(73, 73, 73);
                 }
     
                 button {
-                    padding: 0.5rem 1rem;
+                    padding: 1rem 2rem;
                     display: block;
                     border: none;
-                    background-color: $mainColor;
-                    font-size: 1rem;
+                    background-color: $secondaryColor;
+                    color: $lighColor;
+                    font-size: 0.9rem;
+                    font-weight: 600;
                     cursor: pointer;
                 }
             }
@@ -199,5 +203,14 @@ body {
 @media screen and (max-width: 550px) {
     .main-container .question-container .options {
         grid-template-columns: auto auto ;
+    }
+
+    .main-container .recommendation-container .recommendation_inner {
+        display: flex;
+        flex-direction: column;
+
+        .recommendation_content {
+            padding-bottom: 1rem;
+        }
     }
 }
