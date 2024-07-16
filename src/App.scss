@@ -153,13 +153,14 @@ body {
 
     .recommendation-container {
         margin-top: 2rem;
-
+        
         .recommendation_inner {
             display: grid;
             grid-template-columns: 50% auto;
             justify-content: center;
             background-color: white;
             margin-top: 1rem;
+            box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
     
             img {
                 width: 100%;
@@ -184,14 +185,20 @@ body {
                 }
     
                 button {
-                    padding: 1rem 2rem;
+                    padding: 1.2rem 2rem;
                     display: block;
                     border: none;
-                    background-color: $secondaryColor;
-                    color: $lighColor;
                     font-size: 0.9rem;
                     font-weight: 600;
                     cursor: pointer;
+                    transition: all .3s;
+                    background-color: $secondaryColor;
+                    color: $lighColor;
+                    
+                    &:hover {
+                        background-color: $mainColor;
+                        color: $secondaryColor;
+                    }
                 }
             }
         }
