@@ -11,7 +11,7 @@ export const questions = [
                      {
                          title: "Pendling til jobb",
                          question: "Hvor langt er det til jobben",
-                         description: "Du sykler ofte til jobben",
+                         description: "",
                          image: "./optionsImages/pendling.webp",
                          options: [
                              {
@@ -38,7 +38,7 @@ export const questions = [
                                              {
                                                  title: "Høyt innsteg",
                                                  question: "",
-                                                 description: "Stivere og sterkere rammer som gir ",
+                                                 description: "",
                                                  image: "",
                                                  options: [
                                  
