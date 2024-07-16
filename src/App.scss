@@ -37,6 +37,25 @@ body {
         font-weight: 500;
         font-size: 1rem;
     }
+
+    .previous-question_arrow,
+    .reset_icon {
+        position: relative;
+        right: 0;
+    }
+
+    .previous-question_arrow {
+        transition: all .1s;
+    }
+    
+    .previous-question:hover .previous-question_arrow {
+        right: 0.2rem;
+    }
+
+    .reset:hover .reset_icon {
+        transition: all .3s;
+        transform: rotate(-360deg);
+    }
 }
 
 .loader {

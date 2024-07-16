@@ -11,13 +11,13 @@ const Navigation = ({history, setHistory, setCurrentQuestion, questions, setIsRe
             <div className='navigation'>
                 {
                     !isRecommendation ? 
-                    <button onClick={() => previousQuestion(history, setHistory, setCurrentQuestion)}>
-                        <FontAwesomeIcon icon={faArrowLeftLong} /> Forrige spørsmål
+                    <button className='previous-question' onClick={() => previousQuestion(history, setHistory, setCurrentQuestion)}>
+                        <FontAwesomeIcon className='previous-question_arrow' icon={faArrowLeftLong} /> Forrige spørsmål
                     </button>
                     : null
                 }
-                <button onClick={() => reset(setHistory, setCurrentQuestion, questions, setIsRecommendation)}>
-                    <FontAwesomeIcon icon={faRotateLeft} /> Start på nytt
+                <button className='reset' onClick={() => reset(setHistory, setCurrentQuestion, questions, setIsRecommendation)}>
+                    <FontAwesomeIcon className='reset_icon' icon={faRotateLeft} /> Start på nytt
                 </button>
             </div>
         )}
