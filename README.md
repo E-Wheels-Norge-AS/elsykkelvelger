@@ -1,1 +1,1 @@
-See live app on [https://www.e-wheels.no/elsykkelvelger](https://elsykkelvelger.vercel.app/)
+See live app on [elsykkelvelger.vercel.app](https://elsykkelvelger.vercel.app/)
